@@ -5,9 +5,6 @@ from datetime import timedelta
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import os,sys
-import logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                     level=logging.INFO)
 
 updater = Updater(token='849919118:AAFxrD4ytO252jC5y4ZYAQuijJJUzDQ6A3Y')
 dispatcher = updater.dispatcher
