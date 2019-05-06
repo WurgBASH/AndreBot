@@ -109,4 +109,4 @@ dispatcher.add_handler(MessageHandler(Filters.text, lisingToAll))
 dispatcher.add_handler(CommandHandler('start', main_menu))
 
 if __name__ == '__main__':
-	updater.start_webhook(listen='0.0.0.0', port=5000, webhook_url="https://testingheroku12354.herokuapp.com/849919118:AAFxrD4ytO252jC5y4ZYAQuijJJUzDQ6A3Y")
+	updater.start_webhook(listen='0.0.0.0', port=5000,url_path='849919118:AAFxrD4ytO252jC5y4ZYAQuijJJUzDQ6A3Y', webhook_url="https://testingheroku12354.herokuapp.com/")
