@@ -6,7 +6,9 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import os,sys
 
-updater = Updater(token='849919118:AAFxrD4ytO252jC5y4ZYAQuijJJUzDQ6A3Y')
+TOKEN = "849919118:AAFxrD4ytO252jC5y4ZYAQuijJJUzDQ6A3Y"
+PORT = int(os.environ.get('PORT', '8443'))
+updater = Updater(token=TOKEN)
 dispatcher = updater.dispatcher
 
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
@@ -108,8 +110,7 @@ dispatcher.add_handler(CallbackQueryHandler(callback_query_handler))
 dispatcher.add_handler(MessageHandler(Filters.text, lisingToAll))
 dispatcher.add_handler(CommandHandler('start', main_menu))
 
-while True:
-	try:
-		updater.start_polling()
-	except Exception:
-		time.sleep(15)
+if __name__ == '__main__':
+	updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
+	updater.bot.set_webhook("https://testingheroku12354.herokuapp.com" + TOKEN)
+	updater.idle()
