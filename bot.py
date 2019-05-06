@@ -108,5 +108,8 @@ dispatcher.add_handler(CallbackQueryHandler(callback_query_handler))
 dispatcher.add_handler(MessageHandler(Filters.text, lisingToAll))
 dispatcher.add_handler(CommandHandler('start', main_menu))
 
-if __name__ == '__main__':
-	updater.start_polling()
+while True:
+	try:
+		updater.start_polling()
+	except Exception:
+		time.sleep(15)
