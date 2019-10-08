@@ -112,5 +112,5 @@ dispatcher.add_handler(CommandHandler('start', main_menu))
 
 if __name__ == '__main__':
 	updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
-	updater.bot.set_webhook("https://testingheroku12354.herokuapp.com/" + TOKEN)
+	updater.bot.set_webhook("https://planbproduction.herokuapp.com/" + TOKEN)
 	updater.idle()
